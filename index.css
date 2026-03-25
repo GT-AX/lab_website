@@ -77,12 +77,13 @@ h6 {
 
 /* GT Global Header */
 .gt-global-header {
-    background-color: var(--tech-gold);
-    /* Gold bar */
+    background-color: var(--white);
+    /* White bar */
     padding: 10px 0;
     color: var(--navy-blue);
     display: flex;
     align-items: center;
+    border-bottom: 2px solid var(--tech-gold);
 }
 
 .gt-logo-link {
