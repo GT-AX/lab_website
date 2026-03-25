@@ -400,12 +400,40 @@ h6 {
     margin: 0;
 }
 
+.news-horizontal-scroll {
+    display: flex;
+    gap: 30px;
+}
+
+.news-horizontal-scroll .card {
+    flex: 1;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
     .nav-content {
         flex-direction: column;
         gap: 20px;
         text-align: center;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 0;
+    }
+
+    .news-horizontal-scroll {
+        overflow-x: auto;
+        padding-bottom: 20px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .news-horizontal-scroll .card {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
     }
 
     .split-layout,
