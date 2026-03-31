@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GT AX Center | Georgia Tech Center for Intelligent Manufacturing</title>
+    <link rel="icon" type="image/png" href="assets/images/GTAX_logo.png">
     <!-- Google Fonts for GT Brand Standard -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,9 +31,12 @@
     <nav class="lab-navigation" aria-label="Main Navigation">
         <div class="container nav-content">
             <div class="lab-brand">
-                <a href="#home" onclick="openTab(event, 'home')" style="text-decoration: none;">
-                    <h1>GT AX Center</h1>
-                    <span class="lab-subtitle">Center for Intelligent Manufacturing</span>
+                <a href="#home" onclick="openTab(event, 'home')" style="text-decoration: none; display: flex; align-items: center; gap: 12px;">
+                    <img src="assets/images/GTAX_logo.png" alt="GT AX logo" class="nav-logo">
+                    <div>
+                        <h1>GT AX Center</h1>
+                        <span class="lab-subtitle">Center for Intelligent Manufacturing</span>
+                    </div>
                 </a>
             </div>
             <ul class="nav-links">
@@ -40,7 +44,7 @@
                 <li><a href="#members" onclick="openTab(event, 'members')">Members</a></li>
                 <li><a href="#research" onclick="openTab(event, 'research')">Research</a></li>
                 <li><a href="#publications" onclick="openTab(event, 'publications')">Publications</a></li>
-                <li><a href="#tutorials" onclick="openTab(event, 'tutorials')">Tutorials</a></li>
+                <li><a href="#openings" onclick="openTab(event, 'openings')">Openings</a></li>
                 <li><a href="#contact" onclick="openTab(event, 'contact')">Contact</a></li>
             </ul>
         </div>
@@ -51,44 +55,61 @@
 
         <div id="home" class="tab-pane active" style="display: block;">
 
-            <!-- Side-by-side Group Photo and Mission -->
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="container">
+                    <div class="hero-row">
+                        <div class="hero-photos">
+                            <div class="slideshow-container">
+                                <div class="slide active">
+                                    <img src="assets/images/GTAX1.jpg" alt="GT AX Center team photo 1">
+                                </div>
+                                <div class="slide">
+                                    <img src="assets/images/GTAX2.jpg" alt="GT AX Center team photo 2">
+                                </div>
+                                <div class="slide">
+                                    <img src="assets/images/GTAX3.jpg" alt="GT AX Center team photo 3">
+                                </div>
+                                <div class="slideshow-dots">
+                                    <span class="dot active" onclick="goToSlide(0)"></span>
+                                    <span class="dot" onclick="goToSlide(1)"></span>
+                                    <span class="dot" onclick="goToSlide(2)"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-info">
+                            <img src="assets/images/GTAX_logo.png" alt="GT AX Center logo" class="hero-logo">
+                            <h2 class="hero-title">GT AX Center</h2>
+                            <p class="hero-tagline">Georgia Tech Center for<br>Intelligent Manufacturing</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Mission -->
             <section class="content-section">
                 <div class="container">
-                    <div class="split-layout">
-                        <div class="image-content">
-                            <!-- Placeholder for big group photo -->
-                            <img src="assets/images/group_photo_placeholder.jpg"
-                                alt="GT AX Center lab members group photo"
-                                style="width: 100%; border-radius: 6px; box-shadow: 0 10px 25px rgba(0,48,87,0.15);">
-                        </div>
-                        <div class="text-content">
-                            <h2
-                                style="text-align: left; padding-bottom: 10px; margin-bottom: 20px; font-size: 2.5rem; color: var(--navy-blue);">
-                                Our Mission</h2>
-                            <p style="font-size: 1.1rem; line-height: 1.8;">At the Georgia Tech Center for Intelligent
-                                Manufacturing (GT AX Center), we are committed to revolutionizing how things are made.
-                                Our multidisciplinary approach bridges the gap between fundamental research and
-                                practical applications in additive manufacturing, autonomous robotics, and advanced
-                                sensing technologies.</p>
-                            <div
-                                style="margin-top: 25px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
-                                <a href="#research" onclick="openTab(event, 'research')" class="btn btn-primary">Explore
-                                    Our Research</a>
-                                <div style="display: flex; gap: 15px;">
-                                    <a href="https://github.com/GT-AX/" target="_blank"
-                                        style="font-weight: 500; font-size: 1rem; color: var(--navy-blue); display: flex; align-items: center; gap: 5px;">
-                                        <svg height="20" width="20" viewBox="0 0 16 16" version="1.1"
-                                            style="fill: currentColor;">
-                                            <path
-                                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
-                                            </path>
-                                        </svg> GitHub
-                                    </a>
-                                    <a href="https://huggingface.co/gtaxcenter" target="_blank"
-                                        style="font-weight: 500; font-size: 1rem; color: var(--navy-blue); display: flex; align-items: center; gap: 5px;">
-                                        <span style="font-size: 1.2rem;">🤗</span> Hugging Face
-                                    </a>
-                                </div>
+                    <h2>Our Mission</h2>
+                    <div class="mission-block">
+                        <p>At the Georgia Tech Center for Intelligent Manufacturing (GT AX Center), we are committed to revolutionizing how things are made.
+                            Our multidisciplinary approach bridges the gap between fundamental research and
+                            practical applications in additive manufacturing, autonomous robotics, and advanced
+                            sensing technologies.</p>
+                        <div class="mission-links">
+                            <a href="#research" onclick="openTab(event, 'research')" class="btn btn-primary">Explore
+                                Our Research</a>
+                            <div class="mission-social">
+                                <a href="https://github.com/GT-AX/" target="_blank" class="social-link">
+                                    <svg height="20" width="20" viewBox="0 0 16 16" version="1.1"
+                                        style="fill: currentColor;">
+                                        <path
+                                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+                                        </path>
+                                    </svg> GitHub
+                                </a>
+                                <a href="https://huggingface.co/gtaxcenter" target="_blank" class="social-link">
+                                    <span style="font-size: 1.2rem;">&#129303;</span> Hugging Face
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -170,32 +191,83 @@
             <section class="content-section">
                 <div class="container">
                     <h2>Our Team</h2>
-                    <div class="grid-layout triples">
+
+                    <!-- PI -->
+                    <h3 class="member-category">Principal Investigator</h3>
+                    <div class="grid-layout triples pi-row">
                         <div class="profile-card">
-                            <img src="assets/images/Seung-KyumChoi.png" alt="Seung-Kyum Choi profile picture">
+                            <img src="assets/images/members/Seung-KyumChoi.png" alt="Seung-Kyum Choi profile picture">
                             <h3>Seung-Kyum Choi</h3>
                             <p class="role">Lab Director</p>
-                            <a href="https://www.me.gatech.edu/faculty/choi" target="_blank" class="member-website"
-                                style="display: inline-block; margin-top: 10px; font-size: 0.9rem; font-weight: 500;">Visit
-                                Website</a>
+                            <div class="member-links">
+                                <a href="https://www.me.gatech.edu/faculty/choi" target="_blank" class="member-website">Visit Website</a>
+                                <a href="mailto:seungkyum.choi@me.gatech.edu" class="member-email" title="Email Seung-Kyum Choi">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                </a>
+                            </div>
                         </div>
+                    </div>
+
+                    <!-- PhD Students -->
+                    <h3 class="member-category">PhD Students</h3>
+                    <div class="grid-layout triples">
                         <div class="profile-card">
                             <img src="assets/images/member_mainak_mallick_placeholder.jpg"
                                 alt="Mainak Mallick profile picture">
                             <h3>Mainak Mallick</h3>
                             <p class="role">PhD Student</p>
-                            <a href="#" class="member-website"
-                                style="display: inline-block; margin-top: 10px; font-size: 0.9rem; font-weight: 500;">Visit
-                                Website</a>
+                            <div class="member-links">
+                                <a href="#" class="member-website">Visit Website</a>
+                                <a href="mailto:" class="member-email" title="Email Mainak Mallick">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                </a>
+                            </div>
                         </div>
                         <div class="profile-card">
                             <img src="assets/images/member_junghwan_yim_placeholder.jpg"
                                 alt="Junghwan Yim profile picture">
                             <h3>Junghwan Yim</h3>
                             <p class="role">PhD Student</p>
-                            <a href="#" class="member-website"
-                                style="display: inline-block; margin-top: 10px; font-size: 0.9rem; font-weight: 500;">Visit
-                                Website</a>
+                            <div class="member-links">
+                                <a href="#" class="member-website">Visit Website</a>
+                                <a href="mailto:" class="member-email" title="Email Junghwan Yim">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="profile-card">
+                            <img src="assets/images/members/Nan.jpg"
+                                alt="Nan Li profile picture">
+                            <h3>Nan Li</h3>
+                            <p class="role">Robotics PhD</p>
+                            <p class="member-period">Summer 2026 ~ Present</p>
+                            <p class="research-focus">Multi-robot Systems, Path Planning</p>
+                            <div class="member-links">
+                                <a href="https://nancyli02.github.io/" target="_blank" class="member-website">Visit Website</a>
+                                <a href="mailto:nan.li@gatech.edu" class="member-email" title="Email Nan Li">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Master Students -->
+                    <h3 class="member-category">Master Students</h3>
+                    <div class="grid-layout triples">
+                        <div class="profile-card placeholder-card">
+                            <div class="placeholder-avatar"></div>
+                            <h3>To Be Added</h3>
+                            <p class="role">Master Student</p>
+                        </div>
+                    </div>
+
+                    <!-- Undergraduate Students -->
+                    <h3 class="member-category">Undergraduate Students</h3>
+                    <div class="grid-layout triples">
+                        <div class="profile-card placeholder-card">
+                            <div class="placeholder-avatar"></div>
+                            <h3>To Be Added</h3>
+                            <p class="role">Undergraduate Student</p>
                         </div>
                     </div>
                 </div>
@@ -305,55 +377,31 @@
             </section>
         </div>
 
-        <!-- Tutorials Tab -->
-        <div id="tutorials" class="tab-pane">
+        <!-- Openings Tab -->
+        <div id="openings" class="tab-pane">
             <section class="content-section">
                 <div class="container">
-                    <h2>Tutorials & Resources</h2>
-                    <p
-                        style="text-align: center; max-width: 800px; margin: 0 auto 50px; font-size: 1.1rem; line-height: 1.8; color: var(--text-dark);">
-                        As part of our commitment to contributing back to the research community and broader society,
-                        the GT AX Center freely shares technical documents, comprehensive tutorials, and open-source
-                        datasets generated from our ongoing projects.</p>
-
-                    <div class="grid-layout triples">
-                        <div class="card" style="display: flex; flex-direction: column;">
-                            <h3 style="font-size: 1.3rem;">Getting Started with ROS 2</h3>
-                            <p style="margin-bottom: 20px; flex-grow: 1;">A comprehensive, beginner-friendly guide to
-                                setting up a Robot Operating System 2 workspace and interacting with standard autonomous
-                                assembly manipulators.</p>
-                            <div style="display: flex; align-items: center; gap: 15px;">
-                                <a href="assets/docs/ros2_tutorial_placeholder.pdf" class="btn btn-primary"
-                                    style="padding: 8px 15px; font-size: 0.85rem;">View
-                                    Tutorial</a>
-                                <a href="https://github.com/GT-AX/" target="_blank"
-                                    style="font-size: 0.85rem; font-weight: 700;">View on GitHub</a>
+                    <h2>Open Positions</h2>
+                    <div class="openings-content">
+                        <p class="openings-intro">The GT AX Center is actively looking for motivated students to join our team. We have openings at the following levels:</p>
+                        <div class="openings-list">
+                            <div class="opening-card">
+                                <h3>PhD Students</h3>
+                                <p>We are looking for PhD students with strong backgrounds in robotics, mechanical engineering, or related fields. Research topics include intelligent manufacturing, autonomous systems, and advanced sensing.</p>
+                            </div>
+                            <div class="opening-card">
+                                <h3>Master Students</h3>
+                                <p>Master students interested in hands-on research experience in our lab are welcome to apply. This is a great opportunity to work on cutting-edge projects in a collaborative environment.</p>
+                            </div>
+                            <div class="opening-card">
+                                <h3>Undergraduate Students</h3>
+                                <p>Undergraduate students looking for research experience are encouraged to reach out. We offer mentorship and the chance to contribute to real research projects.</p>
                             </div>
                         </div>
-                        <div class="card" style="display: flex; flex-direction: column;">
-                            <h3 style="font-size: 1.3rem;">Synthetic Radar Data Generation</h3>
-                            <p style="margin-bottom: 20px; flex-grow: 1;">Documentation and code walk-throughs for
-                                generating synthetic fault cases on radial datasets, including mathematical formulations
-                                for vibration and misalignment.</p>
-                            <div style="display: flex; align-items: center; gap: 15px;">
-                                <a href="assets/docs/synthetic_radar_placeholder.pdf" class="btn btn-primary"
-                                    style="padding: 8px 15px; font-size: 0.85rem;">View
-                                    Document</a>
-                                <a href="https://github.com/GT-AX/" target="_blank"
-                                    style="font-size: 0.85rem; font-weight: 700;">View on GitHub</a>
-                            </div>
-                        </div>
-                        <div class="card" style="display: flex; flex-direction: column;">
-                            <h3 style="font-size: 1.3rem;">Intro to Deep Learning for Mfg.</h3>
-                            <p style="margin-bottom: 20px; flex-grow: 1;">Jupyter notebooks and slide decks detailing
-                                the application of predictive analytics and anomaly detection to industrial IoT
-                                time-series data streams.</p>
-                            <div style="display: flex; align-items: center; gap: 15px;">
-                                <a href="assets/docs/deep_learning_course_placeholder.zip" class="btn btn-primary"
-                                    style="padding: 8px 15px; font-size: 0.85rem;">Download Course</a>
-                                <a href="https://github.com/GT-AX/" target="_blank"
-                                    style="font-size: 0.85rem; font-weight: 700;">View on GitHub</a>
-                            </div>
+                        <div class="openings-cta">
+                            <p>We especially welcome students with backgrounds in <strong>Robotics</strong> and <strong>Mechanical Engineering</strong>.</p>
+                            <p>If you are interested, please email Prof. Choi directly:</p>
+                            <a href="mailto:seungkyum.choi@me.gatech.edu" class="btn btn-primary">Email Prof. Choi</a>
                         </div>
                     </div>
                 </div>
@@ -366,16 +414,21 @@
             <section class="content-section light-bg">
                 <div class="container" style="text-align: center;">
                     <h2>Contact Us</h2>
-                    <div
-                        style="background: var(--white); padding: 50px; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); max-width: 600px; margin: 0 auto; border-top: 4px solid var(--tech-gold);">
-                        <p style="margin-bottom: 25px; font-size: 1.1rem;">Interested in our research, partnerships, or
-                            joining the lab? Get in touch.</p>
-                        <hr style="border: 0; height: 1px; background: #eee; margin-bottom: 25px;">
-                        <p style="font-size: 1.2rem; margin-bottom: 15px; color: var(--navy-blue);">
-                            <strong>Email:</strong> contact@axcenter.gatech.edu
-                        </p>
-                        <p style="font-size: 1.2rem; color: var(--navy-blue);"><strong>Address:</strong> Georgia Tech
-                            Manufacturing Institute<br>813 Ferst Drive NW, Atlanta, GA 30332</p>
+                    <div class="contact-container">
+                        <div class="contact-card contact-primary">
+                            <h3>Prof. Seung-Kyum Choi</h3>
+                            <p class="contact-role">Professor</p>
+                            <div class="contact-details">
+                                <p><strong>Location:</strong> GTMI 260</p>
+                                <p><strong>Email:</strong> <a href="mailto:seungkyum.choi@me.gatech.edu">seungkyum.choi@me.gatech.edu</a></p>
+                                <p><strong>Phone:</strong> 404.894.9218</p>
+                            </div>
+                            <a href="mailto:seungkyum.choi@me.gatech.edu" class="btn btn-primary" style="margin-top: 20px; padding: 10px 25px; font-size: 0.9rem;">Email Prof. Choi</a>
+                        </div>
+                        <div class="contact-card contact-secondary">
+                            <h3>Contact Our Students</h3>
+                            <p>If you are interested in a specific student's work or would like to explore collaboration opportunities, feel free to reach out to them directly via email. You can find individual contact information on the <a href="#members" onclick="openTab(event, 'members')">Members</a> page.</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -407,55 +460,70 @@
         </div>
     </footer>
 
-    <!-- Tab Switching Logic -->
+    <!-- Tab Switching & Slideshow Logic -->
     <script>
         function openTab(evt, tabId) {
-            // Prevent default if we're not loading the page via hash
             if (evt) evt.preventDefault();
 
-            // Hide all tab panes
             var tabpanes = document.getElementsByClassName("tab-pane");
             for (var i = 0; i < tabpanes.length; i++) {
                 tabpanes[i].style.display = "none";
                 tabpanes[i].classList.remove("active");
             }
 
-            // Remove aria-current from all nav links
             var navlinks = document.querySelectorAll(".nav-links a");
             for (var i = 0; i < navlinks.length; i++) {
                 navlinks[i].removeAttribute("aria-current");
             }
 
-            // Show current tab
             var currentPane = document.getElementById(tabId);
             if (currentPane) {
                 currentPane.style.display = "block";
                 currentPane.classList.add("active");
             }
 
-            // Add active state to nav link
             if (evt && evt.currentTarget) {
                 evt.currentTarget.setAttribute("aria-current", "page");
             } else {
-                var activeLink = document.querySelector('.nav-links a[data-target="' + tabId + '"]') ||
-                    document.querySelector('.nav-links a[href="#' + tabId + '"]');
+                var activeLink = document.querySelector('.nav-links a[href="#' + tabId + '"]');
                 if (activeLink) activeLink.setAttribute("aria-current", "page");
             }
 
-            // Scroll to top to ensure fresh tab view
             if (evt) {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
-            // Keep URL in sync
             history.pushState(null, null, '#' + tabId);
         }
 
-        // Handle direct link to tabs on page load
-        window.addEventListener('DOMContentLoaded', () => {
+        // Slideshow
+        var slideIndex = 0;
+        var slideTimer;
+
+        function showSlide(n) {
+            var slides = document.querySelectorAll('.slide');
+            var dots = document.querySelectorAll('.dot');
+            if (!slides.length) return;
+
+            slides.forEach(function(s) { s.classList.remove('active'); });
+            dots.forEach(function(d) { d.classList.remove('active'); });
+
+            slideIndex = ((n % slides.length) + slides.length) % slides.length;
+            slides[slideIndex].classList.add('active');
+            dots[slideIndex].classList.add('active');
+        }
+
+        function nextSlide() {
+            showSlide(slideIndex + 1);
+        }
+
+        function goToSlide(n) {
+            clearInterval(slideTimer);
+            showSlide(n);
+            slideTimer = setInterval(nextSlide, 4000);
+        }
+
+        window.addEventListener('DOMContentLoaded', function() {
             if (window.location.hash) {
                 var tabId = window.location.hash.substring(1);
                 if (document.getElementById(tabId)) {
@@ -463,19 +531,10 @@
                 }
             }
 
-            // Fix "Our Mission" underline pseudo element since it is using a class now
-            const h2Mission = document.querySelector('.text-content h2');
-            if (h2Mission) {
-                // Remove the h2 underline from inline style using CSS rule reset
-                h2Mission.style.setProperty('padding-bottom', '0', 'important');
-            }
+            showSlide(0);
+            slideTimer = setInterval(nextSlide, 4000);
         });
     </script>
-    <style>
-        .split-layout .text-content h2::after {
-            display: none;
-        }
-    </style>
 </body>
 
 </html>
